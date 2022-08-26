@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'devise'
 
+gem 'devise-i18n'
+
 gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
 
 gem 'sprockets-rails'
