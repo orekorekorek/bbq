@@ -1,0 +1,41 @@
+<div class="row d-flex justify-content-center align-items-center h-100 mt-2">
+  <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+    <div class="card" style="border-radius: 15px;">
+      <div class="card-body p-5">
+        <h2 class="text-uppercase text-center mb-5">Вход</h2>
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <div class="form-outline mb-4">
+            <%= f.label :email, class: "form-label" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-lg" %>
+          </div>
+
+          <div class="form-outline mb-4">
+            <%= f.label :password, class: "form-label" %>
+            <%= f.password_field :password, autocomplete: "current-password", class: "form-control form-control-lg" %>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="form-outline mb-4">
+              <%= f.check_box :remember_me, class: "form-check-input me-2" %>
+              <%= f.label :remember_me, class: "form-check-label" %>
+            </div>
+          <% end %>
+
+          <div class="d-flex justify-content-center">
+            <%= f.submit "Войти", class: "btn btn-success btn-block btn-lg text-body" %>
+          </div>
+        <% end %>
+
+        <div class="d-flex justify-content-center mt-4 mb-0">
+
+          <p class="text-center text-muted">Еще не шашлычник?
+            <%= render "devise/shared/links" %></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

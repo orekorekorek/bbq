@@ -1,0 +1,47 @@
+<div class="row d-flex justify-content-center align-items-center h-100 mt-2">
+  <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+    <div class="card" style="border-radius: 15px;">
+      <div class="card-body p-5">
+        <h2 class="text-uppercase text-center mb-5">Го шашл я создал</h2>
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <div class="form-outline mb-4">
+            <%= f.label :name, class: "form-label" %>
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control form-control-lg" %>
+          </div>
+
+          <div class="form-outline mb-4">
+            <%= f.label :email, class: "form-label" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-lg" %>
+          </div>
+
+          <div class="form-outline mb-4">
+            <%= f.label :password, class: "form-label" %>
+            <% if @minimum_password_length %>
+              <em>(минимум <%= @minimum_password_length %> символов)</em>
+            <% end %>
+            <%= f.password_field :password, autocomplete: "new-password", class: "form-control form-control-lg" %>
+          </div>
+
+          <div class="form-outline mb-4">
+            <%= f.label :password_confirmation, class: "form-label" %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-control-lg" %>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <%= f.submit "Зарегистрироваться", class: "btn btn-success btn-block btn-lg text-body" %>
+          </div>
+        <% end %>
+
+        <div class="d-flex justify-content-center mt-4 mb-0">
+
+          <p class="text-center text-muted">Уже есть аккаунт?
+          <%= render "devise/shared/links" %></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
