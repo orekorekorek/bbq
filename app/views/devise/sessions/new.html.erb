@@ -4,7 +4,7 @@
       <div class="card-body p-5">
         <h2 class="text-uppercase text-center mb-5">Вход</h2>
 
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
 
           <div class="form-outline mb-4">
