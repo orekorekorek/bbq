@@ -4,7 +4,9 @@
   <%= image_tag user_avatar(@user) %>
 
   <% if @user == current_user %>
-    <p class="buffer-top"><%= link_to 'Редактировать профиль', edit_user_path(@user), class: 'btn btn-default' %></p>
+    <p class="buffer-top">
+      <%= link_to 'Редактировать профиль', edit_user_path(@user), class: 'btn btn-default btn-outline-dark' %>
+    </p>
   <% end %>
 
   <div class="row">
