@@ -32,3 +32,9 @@ ru:
   app:
     name: 'Шашлыки'
     company: '0rek'
+
+  # Правильные склонения для вывода ошибок
+  error:
+     one: '%{count} ошибка'
+     few: '%{count} ошибки'
+     many: '%{count} ошибок'

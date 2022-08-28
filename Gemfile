@@ -5,7 +5,7 @@ gem 'devise'
 
 gem 'devise-i18n'
 
-gem 'russian'
+gem 'rails-i18n'
 
 gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
 
