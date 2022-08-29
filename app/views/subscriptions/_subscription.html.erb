@@ -6,10 +6,10 @@
   <% end %>
   <% if current_user_can_edit?(subscription) %>
     <%= link_to(
-            fa_icon('times'),
+            bootstrap_icon("trash", fill: "red"),
             event_subscription_path(subscription.event, subscription),
             method: :delete,
-            data: {confirm: t('.destroy_confirm')}
+            form: {data: {confirm: t('.destroy_confirm')}}
         ) %>
   <% end %>
 </span>

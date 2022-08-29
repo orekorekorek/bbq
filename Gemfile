@@ -29,6 +29,8 @@ gem 'bootsnap', require: false
 
 gem 'turbo-rails'
 
+gem 'bootstrap-icons-helper'
+
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
 
