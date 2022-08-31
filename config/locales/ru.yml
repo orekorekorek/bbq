@@ -18,6 +18,9 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+      subscription:
+        user_name: 'Имя'
+        user_email: 'Email'
 
   # Перевод сообщений, которые отправляет контроллер
   controllers:
@@ -43,8 +46,8 @@ ru:
 
   # Правильные склонения для вывода ошибок
   error:
-     one: '%{count} ошибка'
-     few: '%{count} ошибки'
+     one: '%{count} ошибки'
+     few: '%{count} ошибок'
      many: '%{count} ошибок'
 
   are_you_sure: 'Вы уверены что хотите удалить событие?'
@@ -56,3 +59,56 @@ ru:
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+
+  error_messages:
+    not_saved: 'Сохранение не удалось из-за %{errors}'
+
+  devise:
+    passwords:
+      forgot_password: 'Забыли пароль?'
+      send_instructions: 'Отправить инструкции по восстановлению'
+    registrations:
+      edit: 'Редактирование пользователя'
+      need_current_password: '(введите свой текущий пароль, чтобы подтвердить изменения)'
+      new: 'Го шашл я создал'
+    sessions:
+      new: 'Вход'
+      enter: 'Войти'
+
+  events:
+    events: 'События' 
+    create: 'Создать событие'
+    edit: 'Редактирование события'   
+    new: 'Новое событие'
+    subscriptions:
+      calling: 'Зовёт:'
+      will_go: 'Пойдут:'
+      i_will_go: 'Я пойду:'
+
+  subscriptions: 
+    subscribe: 'Подписаться'  
+
+  users: 
+    change_password: 'Изменить пароль' 
+    edit: 'Редактировать профиль'
+    events: 'Организовал:'
+    no_events: 'Пользователь пока не организовал ни одного события'  
+
+  minimum_characters: "минимум %{length} символов"
+  forgot_password: 'Забыли пароль?'
+  already_have_account: 'Уже есть аккаунт?'
+  no_account_yet: 'Еще не шашлычник?'
+  no_confirm_instructions: 'Все еще не получили инструкции по подтверждению?'
+  no_unlock_instructions: 'Не получили инструкции по разблокировке?'
+  
+  buttons:
+    save: 'Сохранить'
+    back: 'вернуться'
+    delete_profile: 'Удалить профиль ;('
+    sign_up: 'Зарегистрироваться'
+    sign_in: 'Войти'
+    edit: 'Изменить'
+    delete: 'Удалить'
+    profile: 'Профиль'
+    log_out: 'Выйти'
+    

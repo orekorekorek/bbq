@@ -1,11 +1,10 @@
 <% errors = model.errors %>
 
 <% if errors.any? %>
-  <div class="alert alert-danger">
-    <div class="lead buffer-bottom">
-      В вашей форме <%= errors.count %> ошибок
-    </div>
-
+  <div class="alert alert-danger" id="error_explanation">
+    <h4>
+      <%= t('error_messages.not_saved', errors: t(:error, count: errors.count)) %>:
+    </h4>
     <ul>
       <% errors.full_messages.each do |message| %>
         <li><%= message %></li>

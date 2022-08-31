@@ -2,7 +2,7 @@
   <div class="col-12 col-md-9 col-lg-7 col-xl-6">
     <div class="card" style="border-radius: 15px;">
       <div class="card-body p-5">
-        <h2 class="text-uppercase text-center mb-5">Забыли пароль?</h2>
+        <h2 class="text-uppercase text-center mb-5"><%= t('devise.passwords.forgot_password') %></h2>
 
         <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post },
          data: { turbo: false }) do |f| %>
@@ -14,7 +14,7 @@
           </div>
 
           <div class="d-flex justify-content-center">
-            <%= f.submit "Отправить инструкции по восстановлению", class: "btn btn-success btn-block btn-lg text-body" %>
+            <%= f.submit t('devise.passwords.send_instructions'), class: "btn btn-success btn-block btn-lg text-body" %>
           </div>
         <% end %>
 

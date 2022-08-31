@@ -2,7 +2,7 @@
   <div class="col-12 col-md-9 col-lg-7 col-xl-6">
     <div class="card" style="border-radius: 15px;">
       <div class="card-body p-5">
-        <h2 class="text-uppercase text-center mb-5">Редактирование пользователя</h2>
+        <h2 class="text-uppercase text-center mb-5"><%= t('devise.registrations.edit') %></h2>
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put },
          data: { turbo: false }) do |f| %>
@@ -16,7 +16,7 @@
           <div class="form-outline mb-4">
             <%= f.label :password, class: "form-label" %>
             <% if @minimum_password_length %>
-              <em>(минимум <%= @minimum_password_length %> символов)</em>
+              <em><%= t('minimum_characters', length: @minimum_password_length) %></em>
             <% end %>
             <%= f.password_field :password, autocomplete: "new-password", class: "form-control form-control-lg" %>
           </div>
@@ -28,18 +28,18 @@
 
           <div class="form-outline mb-4">
             <%= f.label :current_password, class: "form-label" %>
-            <i>(введите свой текущий пароль, чтобы подтвердить изменения)</i>
+            <i><%= t('devise.registrations.need_current_password') %></i>
             <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control form-control-lg" %>
           </div>
 
           <div class="d-flex justify-content-center mb-0">
-            <p><%= f.submit "Сохранить", class: "btn btn-success btn-block btn-lg text-body" %>
-            или <%= link_to "вернуться", :back %></p>
+            <p><%= f.submit t('buttons.save'), class: "btn btn-success btn-block btn-lg text-body" %>
+            <%= link_to t('buttons.back'), :back %></p>
           </div>
         <% end %>
 
         <div class="d-flex justify-content-center mt-4 mb-0">
-          <%= button_to "Удалить профиль ;(", registration_path(resource_name), data: { confirm: "Вы уверены?" }, method: :delete, class: "btn btn-warning btn-block btn-lg text-body" %>
+          <%= button_to t('buttons.delete_profile'), registration_path(resource_name), data: { confirm: "Вы уверены?" }, method: :delete, class: "btn btn-warning btn-block btn-lg text-body" %>
         </div>
 
       </div>
