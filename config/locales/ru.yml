@@ -19,6 +19,7 @@ ru:
         datetime: 'Дата и время'
         description: 'Описание'
       subscription:
+        user: 'Пользователь'
         user_name: 'Имя'
         user_email: 'Email'
 
