@@ -56,10 +56,7 @@ ru:
   comments:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
-
-  subscriptions:
-    subscription:
-      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+    
 
   error_messages:
     not_saved: 'Сохранение не удалось из-за %{errors}'
@@ -87,6 +84,8 @@ ru:
       i_will_go: 'Я пойду:'
 
   subscriptions: 
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
     subscribe: 'Подписаться'  
 
   users: 
