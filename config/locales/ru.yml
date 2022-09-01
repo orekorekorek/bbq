@@ -22,6 +22,8 @@ ru:
         user: 'Пользователь'
         user_name: 'Имя'
         user_email: 'Email'
+      comment:
+        body: 'Комментарий'  
 
   # Перевод сообщений, которые отправляет контроллер
   controllers:
@@ -85,8 +87,7 @@ ru:
 
   subscriptions: 
     subscription:
-      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
-    subscribe: 'Подписаться'  
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'  
 
   users: 
     change_password: 'Изменить пароль' 
@@ -111,4 +112,5 @@ ru:
     delete: 'Удалить'
     profile: 'Профиль'
     log_out: 'Выйти'
-    
+    send: 'Отправить'
+    subscribe: 'Подписаться'
