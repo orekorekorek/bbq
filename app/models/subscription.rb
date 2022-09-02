@@ -20,12 +20,10 @@ class Subscription < ApplicationRecord
   end
 
   def not_organizer
-    errors.add(:user, I18n.t('subscriptions.subscription.errors.owner_cant_be_subscriber')) if user == event.user
+    errors.add(:user, :owner_cant_be_subscriber) if user == event.user
   end
 
   def user_already_exist
-    if User.find_by(email: user_email).present?
-      errors.add(:user_email, I18n.t('subscriptions.subscription.errors.user_already_exist'))
-    end
+    errors.add(:user_email, :user_already_exist) if User.find_by(email: user_email).present?
   end
 end

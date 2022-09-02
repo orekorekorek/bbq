@@ -5,6 +5,7 @@ ru:
     models:
       user: 'Пользователь'
       event: 'Событие'
+      subscription: 'Подписка'
 
     # Перевод названий аттрибутов моделей
     attributes:
@@ -21,9 +22,18 @@ ru:
       subscription:
         user: 'Пользователь'
         user_name: 'Имя'
-        user_email: 'Email'
+        user_email: 'Email' 
       comment:
-        body: 'Комментарий'  
+        body: 'Комментарий'
+
+    errors:
+      models:
+        subscription:
+          attributes:
+            user_email:
+              user_already_exist: 'Пользователь с таким email уже существует'
+            user:
+              owner_cant_be_subscriber: 'Вы не можете подписаться на свое событие!' 
 
   # Перевод сообщений, которые отправляет контроллер
   controllers:
@@ -59,7 +69,6 @@ ru:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
     
-
   error_messages:
     not_saved: 'Сохранение не удалось из-за %{errors}'
 
@@ -91,7 +100,7 @@ ru:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
       errors:
         owner_cant_be_subscriber: 'Вы не можете подписаться на свое событие!' 
-        user_already_exist: 'Пользователь с таким email уже существует' 
+        user_already_exist: 'Пользователь с таким email уже существует'
 
   users: 
     change_password: 'Изменить пароль' 
