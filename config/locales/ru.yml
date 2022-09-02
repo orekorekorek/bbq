@@ -90,7 +90,8 @@ ru:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
       errors:
-        owner_cant_be_subscriber: 'Вы не можете подписаться на свое событие!'  
+        owner_cant_be_subscriber: 'Вы не можете подписаться на свое событие!' 
+        user_already_exist: 'Пользователь с таким email уже существует' 
 
   users: 
     change_password: 'Изменить пароль' 
