@@ -42,6 +42,7 @@
         <h4><%= t('events.subscriptions.calling') %></h4>
         <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
+      <% unless @event.subscriptions.except(@new_subscription).empty? %>
       <div class="event-subscriptions">
         <h4><%= t('events.subscriptions.will_go') %></h4>
         <ul>
@@ -50,6 +51,8 @@
           <% end %>
         </ul>
       </div>
+      <% end %>
+      <% unless current_user == @event.user || @event.subscribers.include?(current_user) %>
       <div class="event-subscription-form">
         <h4><%= t('events.subscriptions.i_will_go') %></h4>
         <div>
@@ -57,6 +60,7 @@
            locals: { subscription: @new_subscription || @event.subscriptions.build } %>
         </div>
       </div>
+      <% end %>
     </div>
   </div>
 </div>

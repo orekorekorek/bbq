@@ -8,19 +8,17 @@ class Subscription < ApplicationRecord
   validates :user, uniqueness: { scope: :event_id }, if: -> { user.present? }
   validates :user_email, uniqueness: { scope: :event_id }, unless: -> { user.present? }
 
+  validate :not_organizer
+
   def user_name
-    if user.present?
-      user.name
-    else
-      super
-    end
+    user.present? ? user.name : super
   end
 
   def user_email
-    if user.present?
-      user.email
-    else
-      super
-    end
+    user.present? ? user.email : super
+  end
+
+  def not_organizer
+    errors.add(:user, I18n.t('subscriptions.subscription.errors.owner_cant_be_subscriber')) if user == event.user
   end
 end

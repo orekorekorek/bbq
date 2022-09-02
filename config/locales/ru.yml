@@ -88,7 +88,9 @@ ru:
 
   subscriptions: 
     subscription:
-      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'  
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+      errors:
+        owner_cant_be_subscriber: 'Вы не можете подписаться на свое событие!'  
 
   users: 
     change_password: 'Изменить пароль' 
