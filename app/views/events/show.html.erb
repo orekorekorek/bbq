@@ -48,7 +48,6 @@
           <% @event.subscriptions.except(@new_subscription).each do |subscription| %>
             <li><%= render partial: 'subscriptions/subscription', locals: {subscription: subscription}%></li>
           <% end %>
-          <%# <%= render partial: 'subscriptions/subscription', collection: @event.subscriptions.except(@new_subscription) %>
         </ul>
       </div>
       <div class="event-subscription-form">
