@@ -3,15 +3,19 @@
 
     <%= content_tag 'div', '', class: 'event-background', style: "background-image: url(#{asset_path('event_thumb.jpg')});"%>
 
-      <div class="thumbnail-inner event-info-inner">
-        <div class="caption">
-          <div class="event-description">
-            <h3><%= link_to event.title, event_path(event) %></h3>
-            <h3><small><%= l event.datetime, format: :short %></small></h3>
-            <div class="buffer-both"><%= event.address %></div>
-          </div>
+    <div class="thumbnail-inner event-info-inner">
+      <div class="caption">
+        <div class="event-description">
+          <h3><%= link_to event.title, event_path(event) %></h3>
+          <h3><small><%= l event.datetime, format: :short %></small></h3>
+          <div class="buffer-both"><%= event.address %></div>
+        </div>
+        <div>
+          <% event.visitors.each do |user| %>
+            <%= image_tag user_avatar_thumb(user), class: 'img-icon', title: user.name %>
+          <% end %>
         </div>
       </div>
-
+    </div>
   </div>
 </div>

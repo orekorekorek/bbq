@@ -6,12 +6,14 @@ ru:
       user: 'Пользователь'
       event: 'Событие'
       subscription: 'Подписка'
+      photo: 'Фотография'
 
     # Перевод названий аттрибутов моделей
     attributes:
       user:
         email: 'Email'
         name: 'Имя'
+        avatar: 'Изображение профиля'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
       event:
@@ -25,6 +27,8 @@ ru:
         user_email: 'Email' 
       comment:
         body: 'Комментарий'
+      photo:
+        photo: 'Фотография'
 
     errors:
       models:
@@ -51,6 +55,10 @@ ru:
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
+    photos:
+      error: 'Что-то не так с фоткой'
+      created: 'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фотку'
 
   # Перевод названия приложения и компании-разработчика
   app:
@@ -68,6 +76,10 @@ ru:
   comments:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+
+  subscriptions:
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите отписать этого участника?'
     
   error_messages:
     not_saved: 'Сохранение не удалось из-за %{errors}'
@@ -90,6 +102,8 @@ ru:
     create: 'Создать событие'
     edit: 'Редактирование события'   
     new: 'Новое событие'
+    photos:
+      added: 'Добавил'
     subscriptions:
       calling: 'Зовёт:'
       will_go: 'Пойдут:'

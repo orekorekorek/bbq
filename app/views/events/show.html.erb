@@ -2,7 +2,7 @@
   <div class="event-info row">
     <div class="col-md-12">
       <%= content_tag 'div', '', class: 'event-background',
-        style: "background-image: url(#{asset_path('event.jpg')})" %>
+        style: "background-image: url(#{event_photo(@event)})" %>
 
       <div class="event-info-inner row">
         <div class="col-md-6">
@@ -29,7 +29,16 @@
 
   <div class="row">
     <div class="col-md-8">
-      <div class="event-comments buffer-top">
+      <div class="event-photos">
+        <div class="event-photos-gallery">
+          <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
+        </div>
+        <div class="event-photo-form">
+          <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+        </div>
+      </div>
+
+      <div class="event-comments mt-2">
         <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
         <div class="buffer-both">
           <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
@@ -43,23 +52,23 @@
         <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
       <% unless @event.subscriptions.except(@new_subscription).empty? %>
-      <div class="event-subscriptions">
-        <h4><%= t('events.subscriptions.will_go') %></h4>
-        <ul>
-          <% @event.subscriptions.except(@new_subscription).each do |subscription| %>
-            <li><%= render partial: 'subscriptions/subscription', locals: {subscription: subscription}%></li>
-          <% end %>
-        </ul>
-      </div>
+        <div class="event-subscriptions">
+          <h4><%= t('events.subscriptions.will_go') %></h4>
+          <ul>
+            <% @event.subscriptions.except(@new_subscription).each do |subscription| %>
+              <li><%= render partial: 'subscriptions/subscription', locals: {subscription: subscription}%></li>
+            <% end %>
+          </ul>
+        </div>
       <% end %>
       <% unless current_user == @event.user || @event.subscribers.include?(current_user) %>
-      <div class="event-subscription-form">
-        <h4><%= t('events.subscriptions.i_will_go') %></h4>
-        <div>
-          <%= render partial: 'subscriptions/form',
+        <div class="event-subscription-form">
+          <h4><%= t('events.subscriptions.i_will_go') %></h4>
+          <div>
+            <%= render partial: 'subscriptions/form',
            locals: { subscription: @new_subscription || @event.subscriptions.build } %>
+          </div>
         </div>
-      </div>
       <% end %>
     </div>
   </div>
