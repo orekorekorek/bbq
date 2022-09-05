@@ -3,42 +3,28 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
-gem 'carrierwave'
-
-gem 'rmagick'
-
-gem 'devise'
-
-gem 'devise-i18n'
-
-gem 'rails-i18n'
-
 gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
 
-gem 'sprockets-rails'
-
-gem 'puma', '~> 5.0'
-
-gem 'jsbundling-rails'
-
-gem 'stimulus-rails'
-
-gem 'cssbundling-rails'
-
-gem 'jbuilder'
-
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
 gem 'bootsnap', require: false
-
-gem 'turbo-rails'
-
 gem 'bootstrap-icons-helper'
+gem 'carrierwave'
+gem 'cssbundling-rails'
+gem 'devise-i18n'
+gem 'devise'
+gem 'jbuilder'
+gem 'jsbundling-rails'
+gem 'puma', '~> 5.0'
+gem 'rails-i18n'
+gem 'rmagick'
+gem 'sprockets-rails'
+gem 'stimulus-rails'
+gem 'turbo-rails'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem "image_processing", "~> 1.12"
 
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
-
-  gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'byebug'
 end
 
 group :development do
