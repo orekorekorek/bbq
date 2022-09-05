@@ -9,8 +9,9 @@ gem 'bootsnap', require: false
 gem 'bootstrap-icons-helper'
 gem 'carrierwave'
 gem 'cssbundling-rails'
-gem 'devise-i18n'
 gem 'devise'
+gem 'devise-i18n'
+gem 'image_processing', '~> 1.0'
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'puma', '~> 5.0'
@@ -20,11 +21,10 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem "image_processing", "~> 1.12"
 
 group :development, :test do
-  gem 'sqlite3', '~> 1.4'
   gem 'byebug'
+  gem 'sqlite3', '~> 1.4'
 end
 
 group :development do
