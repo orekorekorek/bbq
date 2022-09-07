@@ -277,7 +277,7 @@ DEPENDENCIES
   cssbundling-rails
   devise
   devise-i18n
-  image_processing (~> 1.0)
+  image_processing (~> 1.12)
   jbuilder
   jsbundling-rails
   pg

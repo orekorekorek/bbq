@@ -8,7 +8,10 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
 
-  has_one_attached :avatar
+  has_one_attached :avatar do |attachable|
+    attachable.variant :default, resize_to_fit: [200, 200]
+    attachable.variant :thumb, resize_to_fit: [70, 70]
+  end
 
   validates :name, presence: true, length: { maximum: 35 }
 
