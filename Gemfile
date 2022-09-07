@@ -5,6 +5,7 @@ ruby '3.1.2'
 
 gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
 
+gem 'aws-sdk-s3', require: false
 gem 'bootsnap', require: false
 gem 'bootstrap-icons-helper'
 gem 'carrierwave'
