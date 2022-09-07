@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   has_one_attached :avatar do |attachable|
     attachable.variant :default, resize_to_fit: [200, 200]
-    attachable.variant :thumb, resize_to_fit: [70, 70]
+    attachable.variant :thumb, resize_to_fill: [70, 70]
   end
 
   validates :name, presence: true, length: { maximum: 35 }
