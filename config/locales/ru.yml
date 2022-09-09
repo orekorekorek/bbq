@@ -86,6 +86,7 @@ ru:
 
   devise:
     passwords:
+      change_password: 'Изменить пароль'
       forgot_password: 'Забыли пароль?'
       send_instructions: 'Отправить инструкции по восстановлению'
     registrations:
@@ -134,3 +135,19 @@ ru:
     log_out: 'Выйти'
     send: 'Отправить'
     subscribe: 'Подписаться'
+
+  event_mailer:
+    comment:
+      title: 'Новый комментарий'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+    subscription:
+      title: 'Новая подписка'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'  
