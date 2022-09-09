@@ -150,4 +150,12 @@ ru:
       author: 'Автор'
       event: 'Событие'
       datetime: 'Состоится'
-      owner: 'Организатор'  
+      owner: 'Организатор' 
+    photo:
+      title: 'Новая фотокарточка'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор' 
