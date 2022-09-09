@@ -88,7 +88,6 @@ ru:
     passwords:
       change_password: 'Изменить пароль'
       forgot_password: 'Забыли пароль?'
-      send_instructions: 'Отправить инструкции по восстановлению'
     registrations:
       edit: 'Редактирование пользователя'
       need_current_password: '(введите свой текущий пароль, чтобы подтвердить изменения)'
@@ -135,6 +134,7 @@ ru:
     log_out: 'Выйти'
     send: 'Отправить'
     subscribe: 'Подписаться'
+    send_instructions: 'Отправить инструкции по восстановлению'
 
   event_mailer:
     comment:
