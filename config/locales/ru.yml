@@ -21,6 +21,7 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+        pincode: 'Пинкод доступа'
       subscription:
         user: 'Пользователь'
         user_name: 'Имя'
@@ -45,6 +46,7 @@ ru:
       created: 'Вы создали новое мероприятие'
       updated: 'Вы обновили мероприятие'
       destroyed: 'Вы удалили мероприятие :('
+      wrong_pincode: 'Неверный пинкод!'
     users:
       updated: 'Вы обновили свой профиль'
     comments:
@@ -112,6 +114,11 @@ ru:
       calling: 'Зовёт:'
       will_go: 'Пойдут:'
       i_will_go: 'Я пойду:'
+    password_form:
+       pincode: Пин-код
+       save: Сохранить
+       main: На главную
+       pin_only_access: Доступ только по пин-коду
 
   users: 
     change_password: 'Изменить пароль' 
