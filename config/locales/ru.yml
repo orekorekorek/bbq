@@ -73,6 +73,10 @@ ru:
 
   are_you_sure: 'Вы уверены что хотите удалить событие?'
 
+  photos:
+    photo:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту фотографию?'
+
   comments:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
