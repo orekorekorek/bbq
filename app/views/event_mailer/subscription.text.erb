@@ -6,6 +6,6 @@ Email: <%=  @email %>
 
 ----------------------
 
-Событие: <%= @event.title %>
+Событие: <%= link_to @event.title, event_url(@event) %>
 Состоится: <%= l @event.datetime, format: :short %>
 Организатор: <%= @event.user.name %>
