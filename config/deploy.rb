@@ -4,15 +4,15 @@ lock '~> 3.17.1'
 set :application, 'bbq'
 set :repo_url, 'https://github.com/orekorekorek/bbq.git'
 
-# Папка, где будет храниться приложение
-set :deploy_to, '/home/deploy/apps/bbq'
+set :branch, :main
 
-# Файлы, которые лежат вне репозитория
+set :deploy_to, '/home/deploy/bbq'
+
+set :nvm_node, 'v16.15.0'
+set :nvm_type, :user
+set :nvm_map_bins, %w[node npm yarn]
+
 append :linked_files, 'config/database.yml', 'config/master.key'
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
-
-# Default branch is :master
-ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
