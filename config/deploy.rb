@@ -6,7 +6,7 @@ set :repo_url, 'https://github.com/orekorekorek/bbq.git'
 
 set :branch, :main
 
-set :deploy_to, '/home/deploy/bbq'
+set :deploy_to, '/home/deploy/apps/bbq'
 
 append :linked_files, 'config/database.yml', 'config/master.key'
 
