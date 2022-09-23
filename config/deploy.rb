@@ -8,10 +8,6 @@ set :branch, :main
 
 set :deploy_to, '/home/deploy/bbq'
 
-set :nvm_node, 'v16.15.0'
-set :nvm_type, :user
-set :nvm_map_bins, %w[node npm yarn]
-
 append :linked_files, 'config/database.yml', 'config/master.key'
 
 # Default deploy_to directory is /var/www/my_app_name
