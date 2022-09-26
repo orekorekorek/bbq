@@ -17,6 +17,7 @@ gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'mailjet'
 gem 'puma', '~> 5.0'
+gem 'pundit', '~> 2.2'
 gem 'rails-i18n'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
@@ -26,6 +27,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 group :development, :test do
   gem 'byebug'
   gem 'letter_opener', '~> 1.8'
+  gem 'rspec-rails'
   gem 'sqlite3', '~> 1.4'
 end
 
