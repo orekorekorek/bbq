@@ -147,6 +147,11 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.11.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -350,6 +355,7 @@ DEPENDENCIES
   cssbundling-rails
   devise
   devise-i18n
+  factory_bot_rails
   image_processing (~> 1.12)
   jbuilder
   jsbundling-rails
