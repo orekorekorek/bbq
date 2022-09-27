@@ -7,25 +7,25 @@ RSpec.describe EventPolicy do
   let(:alien) { FactoryBot.create(:user) }
 
   let(:event) { FactoryBot.create(:event, user:) }
-  let(:event_with_pincode) { FactoryBot.create(:event, user: user, pincode: '123') }
+  let(:event_with_pincode) { FactoryBot.create(:event, user:, pincode: '123') }
 
   permissions :show? do
     context 'when event has no pincode' do
-      let(:event_context) { EventContext.new(event: event, pincode: nil) }
-      
+      let(:event_context) { EventContext.new(event:, pincode: nil) }
+
       context 'when user is owner' do
         it { is_expected.to permit(user, event_context) }
       end
-  
+
       context 'when user is not owner' do
         it { is_expected.to permit(alien, event_context) }
       end
-  
+
       context 'when user is not authorized' do
         it { is_expected.to permit(nil, event_context) }
       end
     end
-    
+
     context 'when event has pincode' do
       let(:event_context) { EventContext.new(event: event_with_pincode, pincode: nil) }
 
