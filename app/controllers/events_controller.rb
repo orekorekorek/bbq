@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
   before_action :save_pincode_in_cookies, only: [:show]
 
-  after_action :verify_authorized, only: %i[edit update destroy show]
+  after_action :verify_authorized, except: :index
 
   def index
     @events = Event.all
@@ -14,14 +14,12 @@ class EventsController < ApplicationController
   def show
     pincode = params[:pincode].present? ? params[:pincode] : cookies.permanent["events_#{@event.id}_pincode"]
 
-    event_context = EventContext.new(event: @event, pincode: pincode)
+    event_context = EventContext.new(event: @event, pincode:)
 
     begin
       authorize event_context, policy_class: EventPolicy
     rescue Pundit::NotAuthorizedError
-      unless @event.pincode_valid?(pincode)
-        render_pincode_form
-      end
+      render_pincode_form unless @event.pincode_valid?(pincode)
     end
 
     @new_comment = @event.comments.build(params[:comment])
@@ -31,6 +29,8 @@ class EventsController < ApplicationController
 
   def new
     @event = current_user.events.build
+
+    authorize @event
   end
 
   def edit
@@ -39,6 +39,8 @@ class EventsController < ApplicationController
 
   def create
     @event = current_user.events.build(event_params)
+
+    authorize @event
 
     if @event.save
       redirect_to @event, notice: I18n.t('controllers.events.created')
