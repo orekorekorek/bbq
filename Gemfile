@@ -19,6 +19,7 @@ gem 'mailjet'
 gem 'puma', '~> 5.0'
 gem 'pundit', '~> 2.2'
 gem 'rails-i18n'
+gem 'resque', '~> 2.4'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
@@ -26,7 +27,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
   gem 'byebug'
-  gem 'letter_opener', '~> 1.8'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
   gem 'sqlite3', '~> 1.4'
@@ -38,6 +38,7 @@ group :development do
   gem 'capistrano-nvm'
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
+  gem 'letter_opener', '~> 1.8'
   gem 'web-console'
 end
 
