@@ -37,6 +37,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-nvm'
   gem 'capistrano-rails'
+  gem 'capistrano-resque', require: false
   gem 'capistrano-rvm'
   gem 'letter_opener', '~> 1.8'
   gem 'web-console'

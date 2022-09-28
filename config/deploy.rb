@@ -10,6 +10,8 @@ set :deploy_to, '/home/deploy/apps/bbq'
 
 append :linked_files, 'config/database.yml', 'config/master.key'
 
+after 'deploy:restart', 'resque:restart'
+
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
 
