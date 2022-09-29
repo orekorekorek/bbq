@@ -7,8 +7,10 @@ class EventsController < ApplicationController
 
   after_action :verify_authorized, except: :index
 
+  after_action :verify_policy_scoped, only: :index
+
   def index
-    @events = Event.all
+    @events = policy_scope(Event)
   end
 
   def show

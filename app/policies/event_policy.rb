@@ -1,4 +1,10 @@
 class EventPolicy < ApplicationPolicy
+  class Scope < Scope
+    def resolve
+      scope.all if user.present?
+    end
+  end
+
   def show?
     pincode_guard!(record)
   end
