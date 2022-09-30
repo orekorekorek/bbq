@@ -16,17 +16,14 @@ class EventsController < ApplicationController
   def show
     pincode = params[:pincode].present? ? params[:pincode] : cookies.permanent["events_#{@event.id}_pincode"]
 
-    event_context = EventContext.new(event: @event, pincode:)
-
-    begin
-      authorize event_context, policy_class: EventPolicy
-    rescue Pundit::NotAuthorizedError
-      render_pincode_form unless @event.pincode_valid?(pincode)
-    end
+    event_context = EventContext.new(event: @event, user: @event.user, pincode:)
+    authorize event_context, policy_class: EventPolicy
 
     @new_comment = @event.comments.build(params[:comment])
     @new_subscription = @event.subscriptions.build(params[:subscription])
     @new_photo = @event.photos.build(params[:photo])
+  rescue Pundit::NotAuthorizedError
+    render_pincode_form unless @event.pincode_valid?(pincode)
   end
 
   def new

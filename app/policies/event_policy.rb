@@ -6,7 +6,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def show?
-    pincode_guard!(record)
+    pincode_guard!
   end
 
   def new?
@@ -22,7 +22,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def update?
-    user_is_owner?(@record)
+    user_is_owner?
   end
 
   def destroy?
@@ -31,13 +31,13 @@ class EventPolicy < ApplicationPolicy
 
   private
 
-  def user_is_owner?(event)
-    user.present? && (event.try(:user) == user)
+  def user_is_owner?
+    @user.present? && (@record.user == @user)
   end
 
-  def pincode_guard!(event_context)
-    return true if event_context.event.pincode.blank? || user_is_owner?(event_context.event)
+  def pincode_guard!
+    return true if @record.event.pincode.blank? || user_is_owner?
 
-    event_context.pincode.present? && event_context.event.pincode_valid?(event_context.pincode)
+    @record.pincode.present? && @record.event.pincode_valid?(@record.pincode)
   end
 end
