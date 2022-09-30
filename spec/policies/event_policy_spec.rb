@@ -11,7 +11,7 @@ RSpec.describe EventPolicy do
 
   permissions :show? do
     context 'when event has no pincode' do
-      let(:event_context) { EventContext.new(event:, pincode: nil) }
+      let(:event_context) { EventContext.new(event:, user:, pincode: nil) }
 
       context 'when user is owner' do
         it { is_expected.to permit(user, event_context) }
@@ -27,7 +27,7 @@ RSpec.describe EventPolicy do
     end
 
     context 'when event has pincode' do
-      let(:event_context) { EventContext.new(event: event_with_pincode, pincode: nil) }
+      let(:event_context) { EventContext.new(event: event_with_pincode, user:, pincode: nil) }
 
       context 'and user is owner' do
         it { is_expected.to permit(user, event_context) }
@@ -44,7 +44,7 @@ RSpec.describe EventPolicy do
       end
 
       context 'and pincode is correct' do
-        let(:event_context) { EventContext.new(event: event_with_pincode, pincode: '123') }
+        let(:event_context) { EventContext.new(event: event_with_pincode, user:, pincode: '123') }
 
         context 'and user is not owner' do
           it { is_expected.to permit(alien, event_context) }
