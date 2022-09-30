@@ -3,13 +3,13 @@ class NotifySubscribersJob < ApplicationJob
 
   def perform(record)
     event = record.event
-    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [photo.user&.email]).uniq
+    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [record.user&.email]).uniq
 
     case record
     when Photo
-      all_emails.each { |mail| EventMailer.photo(record, mail).deliver_later }
+      EventMailer.photo(record, all_emails).deliver_later
     when Comment
-      all_emails.each { |mail| EventMailer.comment(record, mail).deliver_later }
+      EventMailer.comment(record, all_emails).deliver_later
     end
   end
 end
