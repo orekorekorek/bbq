@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[yandex github]
 
   has_many :events, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -19,6 +19,43 @@ class User < ApplicationRecord
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
+  end
+
+  class << self
+    def find_for_gh_oauth(access_token)
+      standart_oauth(access_token)
+    end
+
+    def self.find_for_ya_oauth(access_token)
+      standart_oauth(access_token)
+    end
+
+      private
+
+    def standart_oauth(access_token)
+      email = access_token.info.email
+
+      user = where(email:).first
+      return user if user.present?
+
+      provider = access_token.provider
+      provider_id = access_token.extra.raw_info.id
+      name = access_token.info.name
+
+      where(provider_id:, provider:).first_or_create! do |user|
+        user.name = name
+        user.email = email
+        user.password = Devise.friendly_token.first(16)
+      end
+    end
+    end
+
+  def self.find_for_gh_oauth(access_token)
+    standart_oauth(access_token)
+  end
+
+  def self.find_for_ya_oauth(access_token)
+    standart_oauth(access_token)
   end
 
   private

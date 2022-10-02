@@ -35,11 +35,10 @@
           </div>
         <% end %>
 
-        <div class="d-flex justify-content-center mt-4 mb-0">
-          <p class="text-center text-muted"><%= t('already_have_account')%>
+        <p class="text-center text-muted mt-2"><%= t('already_have_account')%>
           <%= render "devise/shared/links" %>
-          <%= link_to t('forgot_password'), new_user_password_path %></p>
-        </div>
+        </p>
+
       </div>
     </div>
   </div>
