@@ -22,10 +22,4 @@ class Users::OmniauthCallbacksController < ApplicationController
       redirect_to new_user_registration_path
     end
   end
-
-  def failure
-    flash[:alert] = 'не работает(('
-
-    redirect_to root_path
-  end
 end
