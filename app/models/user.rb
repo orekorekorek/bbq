@@ -26,7 +26,7 @@ class User < ApplicationRecord
       standart_oauth(access_token)
     end
 
-    def self.find_for_ya_oauth(access_token)
+    def find_for_ya_oauth(access_token)
       standart_oauth(access_token)
     end
 
@@ -48,15 +48,7 @@ class User < ApplicationRecord
         user.password = Devise.friendly_token.first(16)
       end
     end
-    end
-
-  def self.find_for_gh_oauth(access_token)
-    standart_oauth(access_token)
-  end
-
-  def self.find_for_ya_oauth(access_token)
-    standart_oauth(access_token)
-  end
+    end 
 
   private
 
